@@ -4,15 +4,11 @@ import { postData } from '../actions/index';
 
 const SmurfForm = (props) => {
 
-    //set up new state to hold information about new smurf from form input,
-    //to eventually POST to the API
     const [addedSmurf, setAddedSmurf] = useState({
         name: '',
         age: '',
         height: ''
     })
-
-    //handle any changes made to the form inputs, and update (set state) accordingly
     const handleChanges = event => {
         setAddedSmurf({
             ...addedSmurf,
@@ -20,7 +16,6 @@ const SmurfForm = (props) => {
         })
     }
 
-    //on submit of the form, to then POST data of the new Smurf to the API
     const handleSubmit = event => {
         event.preventDefault();
         props.postData(addedSmurf);
